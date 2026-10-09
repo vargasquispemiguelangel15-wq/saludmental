@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investigación: Salud Mental en Estudiantes</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="profile-container">
+            <!-- Carga perfil.jpeg primero y busca otros formatos si falla -->
+            <img src="{{ url_for('static', filename='perfil.jpeg') }}" 
+                 alt="Foto de Miguel Angel Vargas Quispe" 
+                 class="profile-pic"
+                 onerror="if (this.src.endsWith('.jpeg')) { this.src='{{ url_for('static', filename='perfil.jpg') }}'; } else if (this.src.endsWith('.jpg')) { this.src='{{ url_for('static', filename='perfil.png') }}'; }">
+        </div>
+
+        <h1>INFLUENCIA DE LA SALUD MENTAL EN EL BIENESTAR EMOCIONAL Y SOCIAL DE LOS ESTUDIANTES</h1>
+        <p>Unidad Educativa "España B" — La Paz, Bolivia</p>
+        
+        <div class="badges">
+            <span class="badge">Gestión 2026</span>
+            <span class="badge">Investigador: Miguel Angel Vargas Quispe</span>
+        </div>
+    </header>
+
+    <div class="grid-container">
+
+        <!-- Recuadro 1: Resumen Completo -->
+        <div class="card" onclick="openModal('modal-resumen')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección I</span>
+                <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?q=80&w=800&auto=format&fit=crop" alt="Resumen">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Resumen Ejecutivo</h2>
+                <p>La presente investigación aborda la problemática de la salud mental en el ámbito escolar, un aspecto crítico para el desarrollo integral de las nuevas generaciones...</p>
+                <button class="btn-open">Leer Resumen Completo</button>
+            </div>
+        </div>
+
+        <!-- Recuadro 2: Planteamiento del Problema -->
+        <div class="card" onclick="openModal('modal-planteamiento')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección II</span>
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" alt="Planteamiento del problema">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Planteamiento del Problema</h2>
+                <p>La preservación de la salud mental se ha consolidado como uno de los desafíos más complejos en la sociedad contemporánea, adquiriendo relevancia en adolescentes...</p>
+                <button class="btn-open">Ver Planteamiento Completo</button>
+            </div>
+        </div>
+
+        <!-- Recuadro 3: Pregunta e Hipótesis -->
+        <div class="card" onclick="openModal('modal-pregunta')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección III</span>
+                <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" alt="Pregunta de investigación">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Formulación e Hipótesis</h2>
+                <p>¿De qué manera la salud mental influye en el bienestar emocional y social de los estudiantes adolescentes y jóvenes de la Unidad Educativa España B durante 2026?</p>
+                <button class="btn-open">Ver Preguntas e Hipótesis</button>
+            </div>
+        </div>
+
+        <!-- Recuadro 4: Objetivos Completo -->
+        <div class="card" onclick="openModal('modal-objetivos')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección IV</span>
+                <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" alt="Objetivos">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Objetivos de Investigación</h2>
+                <p>Analizar la influencia de la salud mental en el bienestar emocional y social de los estudiantes, detallando los objetivos específicos del estudio...</p>
+                <button class="btn-open">Ver Objetivos Completos</button>
+            </div>
+        </div>
+
+        <!-- Recuadro 5: Operacionalización de Variables -->
+        <div class="card" onclick="openModal('modal-variables')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección V</span>
+                <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" alt="Variables">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Operacionalización de Variables</h2>
+                <p>Estructura detallada de la Variable Independiente (Salud Mental) y Variable Dependiente (Bienestar Emocional y Social) con sus dimensiones e indicadores...</p>
+                <button class="btn-open">Ver Matriz de Variables</button>
+            </div>
+        </div>
+
+        <!-- Recuadro 6: Marco Metodológico Completo -->
+        <div class="card" onclick="openModal('modal-metodologia')">
+            <div class="card-img-container">
+                <span class="card-tag">Sección VI</span>
+                <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" alt="Metodología">
+                <span class="click-hint">Haz clic para ver más</span>
+            </div>
+            <div class="card-body">
+                <h2>Marco Metodológico</h2>
+                <p>Enfoque cuantitativo, diseño no experimental de corte transversal, métodos teóricos y muestra detallada de 90 estudiantes de 4to y 5to de Secundaria...</p>
+                <button class="btn-open">Ver Metodología Completa</button>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Ventanas emergentes (Modales) -->
+
+    <!-- Modal 1: Resumen -->
+    <div id="modal-resumen" class="modal" onclick="closeModalOnOuterClick(event, 'modal-resumen')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-resumen')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1516534775068-ba3e7458af70?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Resumen">
+            <h2>Resumen del Proyecto de Investigación</h2>
+            <p>La presente investigación aborda la problemática de la salud mental en el ámbito escolar, un aspecto crítico para el desarrollo integral de las nuevas generaciones. El estudio tiene como objetivo general analizar la influencia de la salud mental en el bienestar emocional y social de los estudiantes adolescentes y jóvenes de la Unidad Educativa "España B" de la ciudad de La Paz durante la gestión 2026.</p>
+            <p>Metodológicamente, el trabajo se fundamenta en un enfoque teórico y documental que explora cómo variables contextuales como la presión académica, los conflictos familiares y el entorno sociocultural repercuten directamente en la estabilidad psicológica de los alumnos. A través de la revisión de enfoques clásicos del desarrollo humano y la psicología cognitiva, se examinan manifestaciones comunes en la etapa escolar como el estrés, la ansiedad, las fluctuaciones en la autoestima y los indicios depresivos.</p>
+            <p>Asimismo, se analiza el impacto que estas condiciones ejercen sobre los indicadores de rendimiento pedagógico y en la calidad de las relaciones interpersonales y de convivencia en el aula. Finalmente, se destaca la importancia de diseñar e implementar estrategias de orientación y apoyo psicoeducativo dentro del centro escolar.</p>
+            <p><strong>Palabras clave:</strong> Salud mental, adolescencia, bienestar emocional, rendimiento académico, estrés, relaciones interpersonales, entorno escolar, prevención.</p>
+        </div>
+    </div>
+
+    <!-- Modal 2: Planteamiento del Problema -->
+    <div id="modal-planteamiento" class="modal" onclick="closeModalOnOuterClick(event, 'modal-planteamiento')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-planteamiento')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Planteamiento">
+            <h2>Planteamiento del Problema</h2>
+            <p>La preservación de la salud mental se ha consolidado como uno de los desafíos más complejos y significativos en la sociedad contemporánea, adquiriendo una relevancia crítica en la población adolescente y juvenil. Esta etapa del ciclo vital se encuentra condicionada por profundas transiciones biológicas, psicológicas y sociales.</p>
+            <p>En el contexto específico de las instituciones educativas de la ciudad de La Paz, es posible advertir indicadores de alerta tales como conductas de aislamiento, desmotivación persistente, fluctuaciones bruscas en el comportamiento, manifestaciones de baja autoestima y barreras para la gestión asertiva de las emociones.</p>
+            <p>A este panorama se suma el impacto contemporáneo derivado del uso desmedido de entornos digitales y redes sociales, herramientas que a menudo amplifican los sentimientos de inseguridad, el temor al rechazo social y la necesidad implícita de validación externa.</p>
+        </div>
+    </div>
+
+    <!-- Modal 3: Pregunta e Hipótesis -->
+    <div id="modal-pregunta" class="modal" onclick="closeModalOnOuterClick(event, 'modal-pregunta')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-pregunta')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Pregunta">
+            <h2>Formulación del Problema e Hipótesis</h2>
+            <h3>Problema General:</h3>
+            <p><strong>¿De qué manera la salud mental influye en el bienestar emocional y social de los estudiantes adolescentes y jóvenes de la Unidad Educativa España B, ubicada en la ciudad de La Paz, durante la gestión 2026?</strong></p>
+            
+            <h3>Problemas Específicos:</h3>
+            <ul>
+                <li>¿Cuáles son los principales problemas de salud mental presentes en los estudiantes adolescentes y jóvenes?</li>
+                <li>¿Qué factores familiares, escolares y sociales afectan la salud mental de los estudiantes?</li>
+                <li>¿Cómo influye la salud mental en las relaciones sociales y el rendimiento académico de los estudiantes?</li>
+                <li>¿Qué estrategias pueden contribuir al fortalecimiento del bienestar emocional y social dentro de la unidad educativa?</li>
+            </ul>
+
+            <h3>Hipótesis de Investigación:</h3>
+            <p><strong>Existe una relación significativa entre la salud mental y el bienestar emocional y social de los estudiantes de la Unidad Educativa “España B” de la ciudad de La Paz durante la gestión 2026</strong>, de manera que las condiciones relacionadas con la salud mental se encuentran asociadas directamente con el bienestar socioafectivo del alumnado.</p>
+        </div>
+    </div>
+
+    <!-- Modal 4: Objetivos -->
+    <div id="modal-objetivos" class="modal" onclick="closeModalOnOuterClick(event, 'modal-objetivos')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-objetivos')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Objetivos">
+            <h2>Objetivos de Investigación</h2>
+            <h3>Objetivo General:</h3>
+            <p><strong>Analizar la influencia de la salud mental en el bienestar emocional y social de los estudiantes adolescentes y jóvenes de la Unidad Educativa España B de la ciudad de La Paz durante la gestión 2026.</strong></p>
+
+            <h3>Objetivos Específicos:</h3>
+            <ul>
+                <li><strong>1. Identificar:</strong> Las principales problemáticas asociadas a la salud mental que se manifiestan con mayor recurrencia en la población estudiantil evaluada.</li>
+                <li><strong>2. Describir:</strong> Los factores del entorno familiar, escolar y comunitario que intervienen de forma significativa en la salud mental de los estudiantes.</li>
+                <li><strong>3. Evaluar:</strong> El impacto de la salud mental sobre la calidad de las relaciones interpersonales y el nivel de rendimiento académico de los adolescentes dentro del centro escolar.</li>
+                <li><strong>4. Proponer:</strong> Estrategias de apoyo psicoeducativo orientadas a potenciar el bienestar emocional y la convivencia social en la unidad educativa.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 5: Operacionalización de Variables -->
+    <div id="modal-variables" class="modal" onclick="closeModalOnOuterClick(event, 'modal-variables')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-variables')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Variables">
+            <h2>Operacionalización de Variables</h2>
+            
+            <h3>1. Variable Independiente (X): Salud Mental</h3>
+            <ul>
+                <li><strong>Ansiedad:</strong> Nivel de preocupación y nerviosismo.</li>
+                <li><strong>Estrés:</strong> Presión académica y emocional por tareas o exámenes.</li>
+                <li><strong>Depresión:</strong> Sentimientos de tristeza, desinterés y anhedonia.</li>
+                <li><strong>Autoestima:</strong> Confianza, satisfacción y valoración personal.</li>
+                <li><strong>Resiliencia:</strong> Capacidad de afrontamiento ante dificultades.</li>
+                <li><strong>Entorno:</strong> Factores familiares, escolares, sociales y uso de redes sociales.</li>
+            </ul>
+
+            <h3>2. Variable Dependiente (Y): Bienestar Emocional y Social</h3>
+            <ul>
+                <li><strong>Bienestar Emocional:</strong> Estabilidad, manejo de emociones y satisfacción personal con la vida.</li>
+                <li><strong>Bienestar Social:</strong> Calidad de relaciones interpersonales, percepción de integración y participación grupal.</li>
+                <li><strong>Rendimiento Académico:</strong> Percepción del desempeño e influencia del estado emocional en las notas.</li>
+                <li><strong>Convivencia Escolar:</strong> Promoción de espacios de apoyo y convivencia armónica en el aula.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Modal 6: Marco Metodológico Completo -->
+    <div id="modal-metodologia" class="modal" onclick="closeModalOnOuterClick(event, 'modal-metodologia')">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal('modal-metodologia')">&times;</span>
+            <img src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=800&auto=format&fit=crop" class="modal-header-img" alt="Metodologia">
+            <h2>Marco Metodológico Detallado</h2>
+            
+            <h3>Enfoque y Tipo de Investigación:</h3>
+            <p><strong>Enfoque Cuantitativo:</strong> Recolección objetiva de datos medibles para análisis estadístico porcentual y comprobación de hipótesis.</p>
+            <p><strong>Tipo Descriptivo-Correlacional:</strong> Caracteriza las manifestaciones de salud mental de forma independiente y evalúa la asociación entre la variable X y Y.</p>
+            <p><strong>Diseño No Experimental, Transversal:</strong> Observación de los fenómenos en su ambiente natural sin manipulación de variables en la gestión 2026.</p>
+
+            <h3>Población y Muestra:</h3>
+            <p><strong>Población:</strong> Estudiantes del nivel secundario de la Unidad Educativa "España B" en La Paz.</p>
+            <p><strong>Muestra:</strong> 90 estudiantes seleccionados de 4to y 5to de Secundaria (Paralelos A y B) mediante un muestreo no probabilístico por conveniencia.</p>
+
+            <h3>Técnicas e Instrumentos:</h3>
+            <p><strong>Encuesta:</strong> Cuestionario estructurado de 15 preguntas bajo una <strong>Escala de Likert de 5 puntos</strong> (Nunca, Casi nunca, A veces, Casi siempre, Siempre), administrado en formato digital (Google Forms).</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Proyecto de Investigación Científica — Unidad Educativa "España B" © 2026</p>
+    </footer>
+
+    <script>
+        function openModal(id) {
+            document.getElementById(id).style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal(id) {
+            document.getElementById(id).style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        function closeModalOnOuterClick(event, id) {
+            if (event.target.id === id) {
+                closeModal(id);
+            }
+        }
+    </script>
+
+</body>
+</html>
